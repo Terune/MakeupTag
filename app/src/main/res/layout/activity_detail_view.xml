@@ -1,0 +1,38 @@
+<!-- 상품을 클릭했을 때 나오는 상세 설명 페이지 액티비티의 레이아웃 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".DetailViewActivity">
+
+    <ImageView
+        android:id="@+id/ItemImage"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/ItemDescription"
+        android:text="상품 설명"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Gallery
+        android:id="@+id/ItemGallery"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/ItemGoBack"
+        android:text="뒤로"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/layout_main"
+    android:background="@mipmap/background"
+    android:focusable="false">
+
+    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hangertag3"
+        android:layout_alignBaseline="@+id/btGoItem"
+        android:layout_alignBottom="@+id/btGoItem"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="18sp" />
+    
+    <Button
+        android:id="@+id/btGoItem"
+        android:text="@string/Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/hangertag3"
+        android:layout_toEndOf="@+id/hangertag3"
+        android:layout_alignParentBottom="true" />
+
+    <Button
+        android:id="@+id/btGoLogin"
+        android:text="@string/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btGoItem"
+        android:layout_toEndOf="@+id/btGoItem" />
+
+
+
+</RelativeLayout>
