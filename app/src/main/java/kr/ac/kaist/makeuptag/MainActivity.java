@@ -23,7 +23,12 @@ public class MainActivity extends FragmentActivity {
         Button btGoItem = (Button)findViewById(R.id.btGoItem);
         btGoItem.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, DetailViewActivity.class));
+                Intent intent = new Intent(MainActivity.this,DetailViewActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                ItemSet itemSet = new ItemSet();
+                itemSet.description = "testing";
+                intent.putExtra("itemSet",itemSet);
+                startActivity(intent);
             }
         });
 

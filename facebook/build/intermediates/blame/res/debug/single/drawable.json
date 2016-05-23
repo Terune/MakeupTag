@@ -8,12 +8,12 @@
         "source": "C:\\project\\MakeupTag-master\\facebook\\res\\drawable\\messenger_button_white_bg_round.xml"
     },
     {
-        "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_send_background.xml",
-        "source": "C:\\project\\MakeupTag-master\\facebook\\res\\drawable\\com_facebook_button_send_background.xml"
-    },
-    {
         "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
         "source": "C:\\project\\MakeupTag-master\\facebook\\res\\drawable\\messenger_button_blue_bg_round.xml"
+    },
+    {
+        "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_send_background.xml",
+        "source": "C:\\project\\MakeupTag-master\\facebook\\res\\drawable\\com_facebook_button_send_background.xml"
     },
     {
         "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_selector.xml",

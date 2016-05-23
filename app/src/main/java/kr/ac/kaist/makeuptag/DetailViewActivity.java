@@ -3,6 +3,7 @@
 package kr.ac.kaist.makeuptag;
 
 import android.content.Context;
+import android.content.Intent;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +12,20 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.Gallery;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
-public class DetailViewActivity extends Activity {
+public class DetailViewActivity extends Activity implements View.OnClickListener{
 
     ImageView itemImage;
+    TextView itemDescription;
     Gallery itemGallery;
     Button itemGoBack;
+    ImageButton itemOthers1;
+    ImageButton itemOthers2;
+    ImageButton itemOthers3;
     int[] images = {
             R.mipmap.minkyu0430_405,
             R.mipmap.i1,
@@ -32,12 +39,25 @@ public class DetailViewActivity extends Activity {
 
         itemGallery = (Gallery)findViewById(R.id.ItemGallery);
         itemImage = (ImageView)findViewById(R.id.ItemImage);
+        itemDescription = (TextView)findViewById(R.id.ItemDescription);
         itemGoBack = (Button)findViewById(R.id.ItemGoBack);
         itemGoBack.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v){
                     finish();
                 }
         });
+        itemOthers1 = (ImageButton)findViewById(R.id.ibDetail1);
+        itemOthers1.setOnClickListener(this);
+        itemOthers2 = (ImageButton)findViewById(R.id.ibDetail2);
+        itemOthers2.setOnClickListener(this);
+        itemOthers3 = (ImageButton)findViewById(R.id.ibDetail3);
+
+        Intent intent = getIntent();
+        if (intent != null){
+            ItemSet itemSet;
+            itemSet = (ItemSet)intent.getSerializableExtra("itemSet");
+            itemDescription.setText(itemSet.description);
+            }
 
         itemGallery.setAdapter(new GalleryAdapter(this));
         itemGallery.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -88,6 +108,29 @@ public class DetailViewActivity extends Activity {
 
             return image;
         }
+
+    }
+    public void onClick(View v){
+        Intent intent = new Intent(DetailViewActivity.this,DetailViewActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        ItemSet itemSet = new ItemSet();
+        if(v.getId()==R.id.ibDetail1) {
+                itemSet.description = "1번 상품이다";
+                itemSet.imageList.add("R.mipmap.blouson0");
+                itemSet.imageList.add("R.mipmap.blouson1");
+                itemSet.imageList.add("R.mipmap.blouson2");
+                itemSet.imageList.add("R.mipmap.blouson3");
+                intent.putExtra("itemSet",itemSet);
+            }
+        if(v.getId()==R.id.ibDetail2) {
+                itemSet.description = "2번 상품이다";
+                itemSet.imageList.add("R.mipmap.denim0");
+                itemSet.imageList.add("R.mipmap.denim1");
+                itemSet.imageList.add("R.mipmap.denim2");
+                itemSet.imageList.add("R.mipmap.denim3");
+                intent.putExtra("itemSet",itemSet);
+            }
+        startActivity(intent);
 
     }
 

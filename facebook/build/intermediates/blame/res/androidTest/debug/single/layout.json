@@ -12,12 +12,12 @@
         "source": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\messenger_button_send_blue_round.xml"
     },
     {
-        "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_activity_layout.xml",
-        "source": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_activity_layout.xml"
-    },
-    {
         "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\messenger_button_send_white_small.xml",
         "source": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\messenger_button_send_white_small.xml"
+    },
+    {
+        "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_activity_layout.xml",
+        "source": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\bundles\\debug\\res\\layout\\com_facebook_activity_layout.xml"
     },
     {
         "merged": "C:\\project\\MakeupTag-master\\facebook\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\com_facebook_login_fragment.xml",

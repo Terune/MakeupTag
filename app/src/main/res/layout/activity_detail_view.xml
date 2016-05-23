@@ -10,6 +10,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".DetailViewActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/ibDetail1"
+            android:src="@mipmap/blouson0"
+            android:scaleType="centerInside"
+            android:layout_weight="1"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <ImageButton
+            android:id="@+id/ibDetail2"
+            android:src="@mipmap/denim0"
+            android:scaleType="centerInside"
+            android:layout_weight="1"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <ImageButton
+            android:id="@+id/ibDetail3"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerInside"
+            android:layout_weight="1"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/ItemImage"
