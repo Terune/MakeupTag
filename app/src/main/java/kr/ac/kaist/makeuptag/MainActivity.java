@@ -26,7 +26,11 @@ public class MainActivity extends FragmentActivity {
                 Intent intent = new Intent(MainActivity.this,DetailViewActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 ItemSet itemSet = new ItemSet();
-                itemSet.description = "testing";
+                itemSet.description = "0번 상품이다";
+                itemSet.imageList.add(R.mipmap.coat0);
+                itemSet.imageList.add(R.mipmap.coat1);
+                itemSet.imageList.add(R.mipmap.coat2);
+
                 intent.putExtra("itemSet",itemSet);
                 startActivity(intent);
             }

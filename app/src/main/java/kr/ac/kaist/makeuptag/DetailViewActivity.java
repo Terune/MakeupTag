@@ -15,7 +15,7 @@ import android.widget.Gallery;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 
 public class DetailViewActivity extends Activity implements View.OnClickListener{
 
@@ -26,11 +26,12 @@ public class DetailViewActivity extends Activity implements View.OnClickListener
     ImageButton itemOthers1;
     ImageButton itemOthers2;
     ImageButton itemOthers3;
-    int[] images = {
-            R.mipmap.minkyu0430_405,
-            R.mipmap.i1,
-            R.mipmap.i2,
-    };
+    /*int[] images = {
+            R.mipmap.coat0,
+            R.mipmap.coat1,
+            R.mipmap.coat2,
+    };*/
+    ArrayList<Integer> images;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,18 +53,21 @@ public class DetailViewActivity extends Activity implements View.OnClickListener
         itemOthers2.setOnClickListener(this);
         itemOthers3 = (ImageButton)findViewById(R.id.ibDetail3);
 
+        images = new ArrayList<>();
+
         Intent intent = getIntent();
         if (intent != null){
             ItemSet itemSet;
             itemSet = (ItemSet)intent.getSerializableExtra("itemSet");
             itemDescription.setText(itemSet.description);
+            images = itemSet.imageList;
             }
 
         itemGallery.setAdapter(new GalleryAdapter(this));
         itemGallery.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                itemImage.setImageResource(images[position]);
+                itemImage.setImageResource(images.get(position));
             }
 
             @Override
@@ -81,11 +85,11 @@ public class DetailViewActivity extends Activity implements View.OnClickListener
         }
 
         public int getCount(){
-            return images.length;
+            return images.size();
         }
 
         public Object getItem(int position){
-            return images[position];
+            return images.get(position);
         }
 
         public long getItemId(int position){
@@ -102,7 +106,7 @@ public class DetailViewActivity extends Activity implements View.OnClickListener
                 image = (ImageView)convertView;
             }
 
-            image.setImageResource(images[position]);
+            image.setImageResource(images.get(position));
             image.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             image.setLayoutParams(new Gallery.LayoutParams(200,200));
 
@@ -116,19 +120,19 @@ public class DetailViewActivity extends Activity implements View.OnClickListener
         ItemSet itemSet = new ItemSet();
         if(v.getId()==R.id.ibDetail1) {
                 itemSet.description = "1번 상품이다";
-                itemSet.imageList.add("R.mipmap.blouson0");
-                itemSet.imageList.add("R.mipmap.blouson1");
-                itemSet.imageList.add("R.mipmap.blouson2");
-                itemSet.imageList.add("R.mipmap.blouson3");
+                itemSet.imageList.add(R.mipmap.blouson0);
+                itemSet.imageList.add(R.mipmap.blouson1);
+                itemSet.imageList.add(R.mipmap.blouson2);
+                itemSet.imageList.add(R.mipmap.blouson3);
                 intent.putExtra("itemSet",itemSet);
             }
         if(v.getId()==R.id.ibDetail2) {
                 itemSet.description = "2번 상품이다";
-                itemSet.imageList.add("R.mipmap.denim0");
-                itemSet.imageList.add("R.mipmap.denim1");
-                itemSet.imageList.add("R.mipmap.denim2");
-                itemSet.imageList.add("R.mipmap.denim3");
-                intent.putExtra("itemSet",itemSet);
+                itemSet.imageList.add(R.mipmap.denim0);
+                itemSet.imageList.add(R.mipmap.denim1);
+                itemSet.imageList.add(R.mipmap.denim2);
+                itemSet.imageList.add(R.mipmap.denim3);
+                intent.putExtra("itemSet", itemSet);
             }
         startActivity(intent);
 

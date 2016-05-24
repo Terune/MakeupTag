@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class ItemSet implements Serializable{
     String description;
-    ArrayList<String> imageList;
+    ArrayList<Integer> imageList;
 
     ItemSet(){
         imageList = new ArrayList<>();
